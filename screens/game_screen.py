@@ -2,7 +2,7 @@ from pygame import font, key, sprite, KEYDOWN, K_ESCAPE, K_LEFT, K_RIGHT
 from random import randint
 from settings import Color, WIDTH, HEIGHT
 from abstracts import Scene
-from screens.custom_screen import CustomScreen
+from screens.pause_screen import PauseScreen
 from components.player import Player
 from components.ground import Ground
 from components.taco import Taco
@@ -58,4 +58,4 @@ class GameScreen(Scene):
         for e in events:
             if e.type == KEYDOWN:
                 if e.key == K_ESCAPE:
-                    self.manager.go_to(CustomScreen("Pause"))
+                    self.manager.go_to(PauseScreen())
