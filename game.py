@@ -11,20 +11,20 @@ def main():
     screen = pygame.display.set_mode(DISPLAY, FLAGS, DEPTH)
     pygame.display.set_caption(TITLE)
     clock = pygame.time.Clock()
-    running = True
 
     manager = SceneManager()
 
-    while running:
+    while True:
         clock.tick(FPS)
 
         if pygame.event.get(QUIT):
-            running = False
-            return
+            return False
+
         manager.scene.handle_events(pygame.event.get())
         manager.scene.update()
         manager.scene.render(screen)
         pygame.display.flip()
 
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,6 @@
-from pygame import Surface, Rect
-from settings import WIDTH, HEIGHT
+from settings import WIDTH
 from abstracts import Entity
+
 
 class Player(Entity):
     def __init__(self, xpos, ypos, width, height, color):
@@ -23,5 +23,3 @@ class Player(Entity):
             self.xvel = 0
 
         self.rect.left += self.xvel
-            
-            

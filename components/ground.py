@@ -1,6 +1,5 @@
-from pygame import Surface, Rect
-from settings import HEIGHT
 from abstracts import Entity
+
 
 class Ground(Entity):
     def __init__(self, xpos, ypos, width, height, color):
