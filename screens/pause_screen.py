@@ -3,6 +3,7 @@ from settings import Color, WIDTH
 from abstracts import Scene, Button
 from screens.help_screen import HelpScreen
 
+
 class PauseScreen(Scene):
     def __init__(self):
         super(PauseScreen, self).__init__()

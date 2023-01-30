@@ -2,6 +2,7 @@ from pygame import font, KEYDOWN, K_ESCAPE
 from settings import Color
 from abstracts import Scene
 
+
 class CustomScreen(Scene):
     def __init__(self, text):
         self.text = text

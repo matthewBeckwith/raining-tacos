@@ -1,6 +1,7 @@
 from pygame import font, mouse, sprite, Surface, Rect
 from settings import Color
 
+
 class Scene(object):
     def __init__(self):
         pass
@@ -14,34 +15,35 @@ class Scene(object):
     def handle_events(self, events):
         raise NotImplementedError
 
+
 class Entity(sprite.Sprite):
     def __init__(self, xpos, ypos, width, height, color):
         sprite.Sprite.__init__(self)
-        
+
         self.width = width
         self.height = height
         self.xpos = xpos
         self.ypos = ypos
-        
-        #TODO: change from a color to an image / spritesheet
+
+        # TODO: change from a color to an image / spritesheet
         self.image = Surface((width, height))
         self.image.fill(color)
         self.image.convert()
-        #TODO: End
+        # TODO: End
 
         self.rect = Rect(xpos, ypos, width, height)
-        
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
 
-    def update():
+    def update(self):
         raise NotImplementedError
 
-class Button(sprite.Sprite):  
+
+class Button(sprite.Sprite):
     def __init__(self, text, xpos, ypos, width, height, font_size, action=None):
         sprite.Sprite.__init__(self)
-        
+
         self.width = width
         self.height = height
         self.xpos = xpos
@@ -49,13 +51,13 @@ class Button(sprite.Sprite):
         self.blue_color = Color.SKY.value
         self.white_color = Color.PLAYER.value
         self.rect = Rect(xpos, ypos, width, height)
-        
-        #TODO: change from a color to an image / spritesheet
+
+        # TODO: change from a color to an image / spritesheet
         self.btn = Surface((width, height))
         self.btn.convert()
         self.btn.set_alpha(0)
-        #TODO: End
-        
+        # TODO: End
+
         self.btnfnt = font.SysFont('Arial', font_size)
         self.content = self.btnfnt.render(text, True, self.white_color)
         self.contentpos = self.content.get_rect()

@@ -6,6 +6,7 @@ from screens.game_screen import GameScreen
 from components.ground import Ground
 from components.taco import Taco
 
+
 class TitleScreen(Scene):
     def __init__(self):
         super(TitleScreen, self).__init__()
@@ -19,7 +20,7 @@ class TitleScreen(Scene):
 
     def render(self, screen):
         screen.fill(Color.SKY.value)
-        
+
         title = self.font.render(TITLE, True, Color.PLAYER.value)
         titlepos = title.get_rect()
         titlepos.centerx = screen.get_rect().centerx
@@ -40,6 +41,6 @@ class TitleScreen(Scene):
 
     def handle_events(self, events):
         for e in events:
-            if e.type == KEYDOWN: 
+            if e.type == KEYDOWN:
                 if e.key == K_SPACE:
                     self.manager.go_to(GameScreen(0))

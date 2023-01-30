@@ -2,6 +2,7 @@ from pygame import font, KEYDOWN, K_ESCAPE
 from settings import Color
 from abstracts import Scene
 
+
 class HelpScreen(Scene):
     def __init__(self):
         super(HelpScreen, self).__init__()

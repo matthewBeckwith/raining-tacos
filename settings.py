@@ -9,6 +9,7 @@ FPS = 60
 FLAGS = 0
 DEPTH = 0
 
+
 class Color(Enum):
     SKY = (66, 135, 245)
     GROUND = (89, 60, 29)

@@ -1,11 +1,14 @@
 from pygame import font, key, sprite, KEYDOWN, K_ESCAPE, K_LEFT, K_RIGHT
 from random import randint
+
 from settings import Color, WIDTH, HEIGHT
 from abstracts import Scene
 from screens.pause_screen import PauseScreen
 from components.player import Player
 from components.ground import Ground
 from components.taco import Taco
+from screens.custom_screen import CustomScreen
+
 
 class GameScreen(Scene):
     def __init__(self, levelno):
@@ -36,7 +39,7 @@ class GameScreen(Scene):
 
         self.entities.draw(screen)
         screen.blit(level_text, level_text_pos)
-    
+
     def update(self):
         pressed = key.get_pressed()
         self.p.left, self.p.right = [pressed[k] for k in (K_LEFT, K_RIGHT)]
@@ -49,7 +52,7 @@ class GameScreen(Scene):
         self.entities.update()
 
     def exit(self):
-        self.manager.go_to(GameScreen(self.levelno+1))
+        self.manager.go_to(GameScreen(self.levelno + 1))
 
     def die(self):
         self.manager.go_to(CustomScreen("You lose!"))

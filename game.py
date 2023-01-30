@@ -3,7 +3,8 @@
 import pygame
 from pygame.locals import *
 from settings import DISPLAY, FLAGS, DEPTH, TITLE, FPS
-from scene_manager import SceneMananger
+from scene_manager import SceneManager
+
 
 def main():
     pygame.init()
@@ -12,7 +13,7 @@ def main():
     clock = pygame.time.Clock()
     running = True
 
-    manager = SceneMananger()
+    manager = SceneManager()
 
     while running:
         clock.tick(FPS)

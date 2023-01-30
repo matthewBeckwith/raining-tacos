@@ -1,7 +1,12 @@
 from screens import title_screen, game_screen
 
-class SceneMananger(object):
+
+class SceneManager(object):
     def __init__(self):
+        self.game = None
+        self.scene = None
+        self.prev_scene = None
+        self.stack = None
         self.go_to(title_screen.TitleScreen())
 
     def go_to(self, scene):
@@ -18,6 +23,6 @@ class SceneMananger(object):
                 previous = self.stack.pop()
             if len(self.prev_scene) > 0:
                 self.prev_scene.pop()
-            
+
             self.prev_scene.append(previous)
             self.stack.append(scene)
